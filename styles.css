@@ -1,4 +1,28 @@
 body
 {
     background-color:tomato;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.grid-container
+{
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+    grid-template-columns: auto auto auto auto auto;
+    text-align: center;
+}
+.header
+{
+    font-size: 85pt;
+    text-align: center;
+    padding-bottom: 40px;
+}
+.options
+{
+    border: 1px solid black;
+}
+.ads
+{
+    grid-row:span 5;
 }
