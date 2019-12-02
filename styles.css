@@ -21,12 +21,23 @@ body
 .options
 {
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .ads
 {
     grid-row:span 5;
 }
-
+.headerSelections
+{
+    display:flex;
+}
+.headerTitles
+{
+    border: solid black 1px;
+    margin: 5px;
+}
 
 
 /*Number conversions */
