@@ -24,6 +24,7 @@ body
 .ads
 {
     grid-row:span 5;
+    width: 150px;
 }
 .header
 {
@@ -72,6 +73,11 @@ button
 {
     margin-top: 335px;
 }
+button:hover
+{
+    background-color: pink;
+}
+
 /*Number conversions */
 
 
