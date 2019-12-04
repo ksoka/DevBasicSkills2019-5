@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function showtable()
+        {
+            var t = document.getElementById("mytable");
+            if(t.style.display === 'none')
+            {
+                t.style.display = 'block';
+            }
+            else
+            {
+                t.style.display = 'none'
+            }
+        }
+        function dec_loop()
+        {
+            for ( var i = 1; i <= 50; i++)
+        }
+    </script>
 </head>
 <body>
         <div class="header"><h1 class="mathgenie">MATH GENIOUS</h1>
@@ -14,5 +32,14 @@
             </div>
         </div>
     <h1>Table of conversions between binary, octal, decimal and hexadecimal counting systems</h1>
+    <button onclick ="showtable()">Click to show table</button>
+    <table id ="mytable" class="Numbertable">
+        <tr>
+            <th>Dec</th>
+            <th>Bin</th>
+            <th>Oct</th>
+            <th>Hex</th>
+        </tr>
+    </table>
     
 </body>

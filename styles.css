@@ -56,8 +56,10 @@ body
 
 
 /* Number Tables */
-
-
+.Numbertable
+{
+    width: 50%;
+}
 
 
 
