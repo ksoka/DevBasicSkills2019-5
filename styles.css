@@ -1,4 +1,74 @@
 body
 {
-    background-color:tomato;
+    background-color: brown;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.grid-container
+{
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+    grid-template-columns: auto auto auto auto auto;
+    text-align: center;
+}
+.options
+{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ads
+{
+    grid-row:span 5;
+}
+.header
+{
+    text-align: center;
+    border-bottom: 1px solid black;
+    background-color: beige;
+}
+.headerSelections
+{
+    display:flex;
+    padding: 0px;
+    justify-content: space-evenly;
+}
+.headerTitles
+{
+    width: 100%;
+    border: solid black 1px;
+    padding: 50px;
+    background-color: cornflowerblue;
+}
+.mathgenie
+{
+    font-size: 50pt;
+}
+
+/*Number conversions */
+
+
+
+
+
+
+
+/* Number Tables */
+
+
+
+
+
+/*Combinatorics*/
+
+
+
+
+/*truth tables*/
+
+
+/*random values*/
+
+/*surprise math*/

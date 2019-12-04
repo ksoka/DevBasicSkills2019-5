@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+            function dec_to_other()
+            {
+                var dec = document.getElementById("decInput").value;
+                var dec_number = parseInt(dec,10);
+
+                if (isNaN(dec_number) || dec % 1 != 0)
+                {
+                    alert("Please type in a correct value") ;
+                }
+                else
+                {
+                    document.getElementById("decimalInput").innerHTML = dec_number + " is " ;
+                    document.getElementById("decOutputDec").innerHTML = dec_number.toString(10) + " in decimal";
+                    document.getElementById("binOutputDec").innerHTML = dec_number.toString(2) + " in binary";
+                    document.getElementById("octOutputDec").innerHTML = dec_number.toString(8) + " in octal";
+                    document.getElementById("hexOutputDec").innerHTML = dec_number.toString(16) + " in hexadecimal";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">MATH GENIOUS</div>
+        <div class="headerSelections">
+            <div class="headerTitles">Number Conversion</div>
+            <div class="headerTitles">Number Table</div>
+            <div class="headerTitles">Combinatorics</div>
+            <div class="headerTitles">Truth tables</div>
+            <div class="headerTitles">Random Values</div>
+            <div class="headerTitles">Surprise math</div>
+        </div>
+        <div>To convert from decimal to other numeral systems: <input type="text" placeholder="Type number in decimal..." id="decInput"> </div>
+        <div id="decimalInput">0 is</div>
+        <div id="decOutputDec">0 in decimal</div>
+        <div id="binOutputDec">0 in binary</div>
+        <div id="octOutputDec">0 in octal</div>
+        <div id="hexOutputDec">0 in hexadecimal</div>
+        <div><button onclick="dec_to_other()">Convert</button></div>
+
+        <div>To convert from binary to other numeral systems: <input type="text" placeholder="Type number in binary..." id="binInput"> </div>
+        <div id="binaryInput">0 is</div>
+        <div id="decOutputBin">0 in binary</div>
+        <div id="octOutputBin">0 in octal</div>
+        <div id="hexOutputBin">0 in hexadecimal</div>
+        <div><button onclick="bin_to_other()">Convert</button></div>
+
+
+    </body>
+</html>
