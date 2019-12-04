@@ -22,6 +22,7 @@ body
 .ads
 {
     grid-row:span 5;
+    width: 150px;
 }
 .header
 {
@@ -56,6 +57,10 @@ button
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+button:hover
+{
+    background-color: pink;
 }
 
 /*Number conversions */
