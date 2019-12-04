@@ -1,6 +1,6 @@
 body
 {
-    background-color:tomato;
+    background-color: brown;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .grid-container
@@ -11,12 +11,6 @@ body
     grid-template-rows: 100px 100px 100px 100px 100px;
     grid-template-columns: auto auto auto auto auto;
     text-align: center;
-}
-.header
-{
-    font-size: 70pt;
-    text-align: center;
-    padding-bottom: 40px;
 }
 .options
 {
@@ -29,16 +23,29 @@ body
 {
     grid-row:span 5;
 }
+.header
+{
+    text-align: center;
+    border-bottom: 1px solid black;
+    background-color: beige;
+}
 .headerSelections
 {
     display:flex;
+    padding: 0px;
+    justify-content: space-evenly;
 }
 .headerTitles
 {
+    width: 100%;
     border: solid black 1px;
-    margin: 5px;
+    padding: 50px;
+    background-color: cornflowerblue;
 }
-
+.mathgenie
+{
+    font-size: 50pt;
+}
 
 /*Number conversions */
 
