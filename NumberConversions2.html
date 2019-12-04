@@ -52,7 +52,6 @@
                     document.getElementById("hexOutput").innerHTML = oct_number.toString(16) + " in hexadecimal";
                 }
             }
-
             var systemIndex = 1;
             var allSystems = ["Decimal", "Binary", "Octal", "Hexadecimal"];
             function inputSystem()
@@ -66,21 +65,20 @@
                     systemIndex = 0 ;
                 }
             }
-
-
         </script>
     </head>
     <body>
-        <div class="header">MATH GENIOUS</div>
-        <div class="headerSelections">
-            <div class="headerTitles">Number Conversion</div>
-            <div class="headerTitles">Number Table</div>
-            <div class="headerTitles">Combinatorics</div>
-            <div class="headerTitles">Truth tables</div>
-            <div class="headerTitles">Random Values</div>
-            <div class="headerTitles">Surprise math</div>
+        <div class="header"><h1 class="mathgenie">MATH GENIOUS</h1>
+            <div class="headerSelections">
+                <div class="headerTitles"> Number Conversion </div>
+                <div class="headerTitles"> Number Table </div>
+                <div class="headerTitles"> Combinatorics </div>
+                <div class="headerTitles"> Truth tables </div>
+                <div class="headerTitles"> Random Values </div>
+                <div class="headerTitles"> Surprise Math </div>
+            </div>
         </div>
-        <div>To convert from to other numeral systems: <input type="text" placeholder="Type a number..." id="numInput">  <button onclick="inputSystem()" id="inputSystem">Decimal</button></div>
+        <div>To convert between different numeral systems: <input type="text" placeholder="Type a number..." id="numInput">  <button onclick="inputSystem()" id="inputSystem">Decimal</button></div>
         <div id="numberInput">0 is</div>
         <div id="decOutput">0 in decimal</div>
         <div id="binOutput">0 in binary</div>

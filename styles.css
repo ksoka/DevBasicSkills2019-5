@@ -46,10 +46,19 @@ body
 {
     font-size: 50pt;
 }
+button
+{
+    border-radius: 20px;
+    width: 100px;
+    height: 25px;
+    background-color: aqua;
+    font-weight: bold;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
 
 /*Number conversions */
-
-
 
 
 
