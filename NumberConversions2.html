@@ -23,7 +23,7 @@
                 else if ( isNaN(dec_number) || 
                      userInput % 1 != 0 || 
                     (inputValue == "Binary" && userInput.search(/^[10]+$/) == -1) ||
-                    (inputValue == "Octal" && userInput.search(/^[1-7]+$/) == -1))
+                    (inputValue == "Octal" && userInput.search(/^[0-7]+$/) == -1))
                 {
                     alert("Please type in a correct value") ;
                 }
