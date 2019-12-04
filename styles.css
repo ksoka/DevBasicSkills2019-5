@@ -2,6 +2,8 @@ body
 {
     background-color: brown;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 .grid-container
 {
@@ -25,12 +27,18 @@ body
 }
 .header
 {
+    position: fixed;
+    top: 0;
+    width: 100%;
     text-align: center;
     border-bottom: 1px solid black;
     background-color: beige;
+    padding: 0;
+    margin: 0;
 }
 .headerSelections
 {
+    position: sticky;
     display:flex;
     padding: 0px;
     justify-content: space-evenly;
@@ -41,6 +49,9 @@ body
     border: solid black 1px;
     padding: 50px;
     background-color: cornflowerblue;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 .mathgenie
 {
@@ -57,7 +68,10 @@ button
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
-
+.content
+{
+    margin-top: 335px;
+}
 /*Number conversions */
 
 
@@ -68,6 +82,7 @@ button
 .Numbertable
 {
     width: 50%;
+    margin: 50px;
 }
 
 
