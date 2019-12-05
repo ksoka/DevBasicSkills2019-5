@@ -3,43 +3,38 @@
     <head>
         <link rel="stylesheet" href="styles.css">
         <script>
-            dec_to_bho  = function(n, base) 
+            function table_change()
             {
-                if (n < 0) 
-                {
-                     n = 0xFFFFFFFF + n + 1;
-                } 
-                switch (base)  
-                {  
-                    case 'B':  
-                    return parseInt(n, 10).toString(2);
-                    break;  
-                    case 'H':  
-                    return parseInt(n, 10).toString(16);
-                    break;  
-                    case 'O':  
-                    return parseInt(n, 10).toString(8);
-                    break;  
-                    default:  
-                    return("Wrong input.........");  
-                }  
-            }
-                function table_change()
-                {
-                    var table = '';
-                    var rows = 4;
-                    var cols = 51;
-                    for (var r = 0; r < rows; r++)
+                var table = '';
+                var rows = 4;
+                var cols = 51;
+                var bin = parseInt(c,16);
+                table += '<tr>';
+                    for( var c = 0; c < cols; c++)
                     {
-                        table += '<tr>';
-                            for( var c = 0; c < cols; c++)
-                            {
-                                table += '<td>' + c + '</td>';
-                            }
-                        table += '</tr>';
+                        table += '<td>' + c.toString(10) + '</td>';
                     }
-                    document.getElementById('addtable').innerHTML = ('<table>' + table + '</table>')
-                }
+                table += '</tr>';
+                table += '<tr>';
+                    for( var c = 0; c < cols; c++)
+                    {
+                        table += '<td>' + c.toString(2) + '</td>';
+                    }
+                table += '</tr>';
+                table += '<tr>';
+                    for( var c = 0; c < cols; c++)
+                    {
+                        table += '<td>' + c.toString(8) + '</td>';
+                    }
+                table += '</tr>';
+                table += '<tr>';
+                    for( var c = 0; c < cols; c++)
+                    {
+                        table += '<td>' + c.toString(16) + '</td>';
+                    }
+                table += '</tr>';
+                document.getElementById('addtable').innerHTML = ('<table>' + table + '</table>')
+            } 
             </script>
     </head>
     <body>
