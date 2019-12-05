@@ -2,6 +2,24 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css">
+        <script>
+                function table_change()
+                {
+                    var table = '';
+                    var rows = 4;
+                    var cols = 51;
+                    for (var r = 0; r < rows; r++)
+                    {
+                        table += '<tr>';
+                            for( var c = 0; c < cols; c++)
+                            {
+                                table += '<td>' + c + '</td>';
+                            }
+                        table += '</tr>';
+                    }
+                    document.getElementById('addtable').innerHTML = ('<table>' + table + '</table>')
+                }
+            </script>
     </head>
     <body>
             <div class="header"><h1 class="mathgenie">MATH GENIOUS</h1>
@@ -15,23 +33,14 @@
                 </div>
             </div>
         <div class="content">Table of conversions between binary, octal, decimal and hexadecimal counting systems
-        <button onclick="dec_loop()">Click me </button>
-        <table id ="mytable" class="Numbertable">
+        <button onclick="table_change()">Click me </button>
+        <table id ="addtable" class="Numbertable">
                 <tr>
                     <th>Dec</th>
                     <th>Bin</th>
                     <th>Oct</th>
                     <th>Hex</th>
                 </tr>
-                <script>
-                        function dec_loop()
-                        {
-                            for (let d = 0; d <=50; d++)
-                            {
-                            document.write(d + "<th>")
-                            }
-                        }
-                </script>
             </table>
         </div>
     </body>
