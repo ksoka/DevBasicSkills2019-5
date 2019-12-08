@@ -6,35 +6,36 @@
             function table_change()
             {
                 var table = '';
-                var rows = 4;
-                var cols = 51;
-                var bin = parseInt(c,16);
-                table += '<tr>';
-                    for( var c = 0; c < cols; c++)
+                    var rows = 51;
+                    var cols = 4;
+                    var bin = parseInt(c,16);
+                    for (var r = 0; r < rows; r++)
                     {
-                        table += '<td>' + c.toString(10) + '</td>';
+                        table += ("<tr>");
+                        for( var c = 0; c < cols; c++)
+                        {
+                            if(c==0)
+                            {
+                                table += '<td>' + r.toString(10) + '</td>';
+                            }
+                            if(c==1)
+                            {
+                                table += '<td>' + r.toString(2) + '</td>';
+                            }
+                            if(c==2)
+                            {
+                                table += '<td>' + r.toString(8) + '</td>';
+                            }
+                            if(c==3)
+                            {
+                                table += '<td>' + r.toString(16) + '</td>';
+                            }
+                        }
+                        table += "<td>";
                     }
-                table += '</tr>';
-                table += '<tr>';
-                    for( var c = 0; c < cols; c++)
-                    {
-                        table += '<td>' + c.toString(2) + '</td>';
-                    }
-                table += '</tr>';
-                table += '<tr>';
-                    for( var c = 0; c < cols; c++)
-                    {
-                        table += '<td>' + c.toString(8) + '</td>';
-                    }
-                table += '</tr>';
-                table += '<tr>';
-                    for( var c = 0; c < cols; c++)
-                    {
-                        table += '<td>' + c.toString(16) + '</td>';
-                    }
-                table += '</tr>';
-                document.getElementById('addtable').innerHTML = ('<table>' + table + '</table>')
-            } 
+                    document.getElementById('addtable').innerHTML = "here is your table"
+                    document.getElementById('addtable').innerHTML += ('<table id="remove">' + table + '</table>')
+                } 
             </script>
     </head>
     <body>
