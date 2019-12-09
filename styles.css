@@ -100,7 +100,11 @@ button:hover
 
 
 /*truth tables*/
-
+.truthtable
+{
+    width: 25%;
+    margin: 50px;
+}
 
 /*random values*/
 
