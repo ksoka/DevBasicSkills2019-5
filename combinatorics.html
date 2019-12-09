@@ -4,43 +4,55 @@
         <script>
             function factorial(num)
             {
-                console.log("factorial funktio")
                 if (num == 0 || num == 1)
                 {
                     return 1;
                 }
-                for (var i = (num - 1); i >= 1; i--)
+                else
                 {
-                    result = num*i ;
+                    for (var i = (num - 1); i >= 1; i--)
+                    {
+                    num = num*i ;
+                    }
+                    return num;
+                    console.log(num)
                 }
-                return result;
             }
             function combinations()
             {
-                console.log("toimiiko?");
-                var A = document.getElementsByClassName("AllObjects").value;
-                var S = document.getElementsByClassName("SelectedObjects").value;
+                var A = document.getElementById("AllObjects").value;
+                var S = document.getElementById("SelectedObjects").value;
+                console.log("A: " + A);
+                console.log("S: " + S);
                 if(A == S)
                 {
-                    return 1;
-                    console.log("samat numerot")
+                    document.getElementById("result").innerHTML = "When there are " + A 
+                    + " objects and you choose " + S + " objects. There is only one way to choose it" ;
                 }
                 else
                 {
                     var answer = (factorial(A)/(factorial(S)*factorial(A-S)))
-                    console.log("test" + answer);
-                }
-
-                
+                    if (answer <= 0)
+                    {
+                        document.getElementById("result").innerHTML = "";
+                        alert("Your set is smaller than the amount of chosed objects"); 
+                    }
+                    else
+                    {
+                        document.getElementById("result").innerHTML = "When there are " + A 
+                        + " objects and you choose " + S + " objects of those. There are " + answer + " different ways to make the choise" ;
+                    }
+                }  
             }
-        
         </script>
     </head>
     <body>
         <div>Hello, here you can do some maths related to combinatorics</div>
-        Please state the total amount of ojects that are in the set:<input type="number" min="1" class="AllObjects"> <br>
-        Please state how many objects you would like to choose from that set: <input type="number" min="1" class="SelectedObjects">
+        Please state the total amount of ojects that are in the set:<input type="number" min="1" id="AllObjects"> <br>
+        Please state how many objects you would like to choose from that set: <input type="number" min="1" id="SelectedObjects">
         <button onclick="combinations()">Press here to do the math</button>
+        <div id="result"></div>
+        <button onclick="permutations()">Press here to permutate</button>
 
         
     </body>
