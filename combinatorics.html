@@ -2,10 +2,46 @@
 <html>
     <head>
         <script>
+            function factorial(num)
+            {
+                console.log("factorial funktio")
+                if (num == 0 || num == 1)
+                {
+                    return 1;
+                }
+                for (var i = (num - 1); i >= 1; i--)
+                {
+                    result = num*i ;
+                }
+                return result;
+            }
+            function combinations()
+            {
+                console.log("toimiiko?");
+                var A = document.getElementsByClassName("AllObjects").value;
+                var S = document.getElementsByClassName("SelectedObjects").value;
+                if(A == S)
+                {
+                    return 1;
+                    console.log("samat numerot")
+                }
+                else
+                {
+                    var answer = (factorial(A)/(factorial(S)*factorial(A-S)))
+                    console.log("test" + answer);
+                }
+
+                
+            }
         
         </script>
     </head>
     <body>
+        <div>Hello, here you can do some maths related to combinatorics</div>
+        Please state the total amount of ojects that are in the set:<input type="number" min="1" class="AllObjects"> <br>
+        Please state how many objects you would like to choose from that set: <input type="number" min="1" class="SelectedObjects">
+        <button onclick="combinations()">Press here to do the math</button>
+
         
     </body>
 </html>
