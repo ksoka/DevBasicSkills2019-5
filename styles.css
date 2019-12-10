@@ -72,14 +72,36 @@ button
 }
 .content
 {
-    margin-top: 335px;
+    margin-top: 250px;
 }
 button:hover
 {
     background-color: pink;
 }
+.center
+{
+    text-align: center;
+}
 
 /*Number conversions */
+.gridcontainer
+{
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    grid-template-rows: 75px 75px;
+    grid-template-columns:  auto auto;
+    text-align: center;
+}
+.gridUnit
+{
+    border: 1px solid black;
+}
+.answer
+{
+    padding: 25px;
+}
+
 
 
 
