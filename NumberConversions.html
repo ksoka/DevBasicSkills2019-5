@@ -3,6 +3,14 @@
     <head>
         <link rel="stylesheet" href="styles.css">
         <script>
+            function print(system_name, system_num, base)
+            {
+                document.getElementById("numberInput").innerHTML = system_name + " number: " + system_num.toString(base) + " is " ;
+                document.getElementById("decOutput").innerHTML = system_num.toString(10) + " in decimal";
+                document.getElementById("binOutput").innerHTML = system_num.toString(2) + " in binary";
+                document.getElementById("octOutput").innerHTML = system_num.toString(8) + " in octal";
+                document.getElementById("hexOutput").innerHTML = system_num.toString(16) + " in hexadecimal";
+            }
             function numberConvert()
             {
                 var userInput = document.getElementById("numInput").value;
@@ -14,11 +22,7 @@
                 
                 if(inputValue =="Hexadecimal" && userInput.search(/^[0-9a-fA-F]+$/) ==0 )
                 {
-                    document.getElementById("numberInput").innerHTML = "Hexadecimal number: " + hex_number.toString(16) + " is " ;
-                    document.getElementById("decOutput").innerHTML = hex_number.toString(10) + " in decimal";
-                    document.getElementById("binOutput").innerHTML = hex_number.toString(2) + " in binary";
-                    document.getElementById("octOutput").innerHTML = hex_number.toString(8) + " in octal";
-                    document.getElementById("hexOutput").innerHTML = hex_number.toString(16) + " in hexadecimal";
+                    print("Hexadecimal", hex_number, 16)
                 }
                 else if ( isNaN(dec_number) || 
                      userInput % 1 != 0 || 
@@ -29,27 +33,15 @@
                 }
                 else if (inputValue == "Decimal")
                 {
-                    document.getElementById("numberInput").innerHTML = "Decimal number: " + dec_number + " is " ;
-                    document.getElementById("decOutput").innerHTML = dec_number.toString(10) + " in decimal";
-                    document.getElementById("binOutput").innerHTML = dec_number.toString(2) + " in binary";
-                    document.getElementById("octOutput").innerHTML = dec_number.toString(8) + " in octal";
-                    document.getElementById("hexOutput").innerHTML = dec_number.toString(16) + " in hexadecimal";
+                    print("Decimal", dec_number,10)
                 }
                 else if (inputValue == "Binary")
                 {
-                    document.getElementById("numberInput").innerHTML = "Binary number: " + bin_number.toString(2) + " is " ;
-                    document.getElementById("decOutput").innerHTML = bin_number.toString(10) + " in decimal";
-                    document.getElementById("binOutput").innerHTML = bin_number.toString(2) + " in binary";
-                    document.getElementById("octOutput").innerHTML = bin_number.toString(8) + " in octal";
-                    document.getElementById("hexOutput").innerHTML = bin_number.toString(16) + " in hexadecimal";
+                    print("Binary", bin_number, 2)
                 }
                 else if (inputValue == "Octal")
                 {
-                    document.getElementById("numberInput").innerHTML = "Octal number: " + oct_number.toString(8) + " is " ;
-                    document.getElementById("decOutput").innerHTML = oct_number.toString(10) + " in decimal";
-                    document.getElementById("binOutput").innerHTML = oct_number.toString(2) + " in binary";
-                    document.getElementById("octOutput").innerHTML = oct_number.toString(8) + " in octal";
-                    document.getElementById("hexOutput").innerHTML = oct_number.toString(16) + " in hexadecimal";
+                    print("Octal", oct_number, 8)
                 }
             }
             var systemIndex = 1;
@@ -78,13 +70,20 @@
                 <div class="headerTitles"><a href="SurpriseMath.html"> Surprise Math</a> </div>
             </div>
         </div>
-        <div class="content">To convert between different numeral systems: <input type="text" placeholder="Type a number..." id="numInput">  <button onclick="inputSystem()" id="inputSystem">Decimal</button></div>
-        <div id="numberInput">0 is</div>
-        <div id="decOutput">0 in decimal</div>
-        <div id="binOutput">0 in binary</div>
-        <div id="octOutput">0 in octal</div>
-        <div id="hexOutput">0 in hexadecimal</div>
-        <div><button onclick="numberConvert()">Convert</button></div>
+        <div class="content center">To convert between different numeral systems: <br>
+            please choose from what numbering system you want to convert 
+            <button onclick="inputSystem()" id="inputSystem">Decimal</button>
+            <input type="text" placeholder="Type a number..." id="numInput"> 
+            <button onclick="numberConvert()">Convert</button>
+        </div>
+        <div id="numberInput" class="center answer">0 is</div>
+        <div class="gridcontainer">
+            <div id="decOutput" class="gridUnit">0 in decimal</div>
+            <div id="binOutput" class="gridUnit">0 in binary</div>
+            <div id="octOutput" class="gridUnit">0 in octal</div>
+            <div id="hexOutput" class="gridUnit">0 in hexadecimal</div>
+        </div>
+        
 
 
     </body>
