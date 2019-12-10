@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+            function rng(array)
+            {
+                var currentIndex = array.length, temporaryValue, RandomIndex;
+                while (0 != currentIndex) 
+                {
+                    RandomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex -= 1;
+
+                    temporaryValue = array[currentIndex];
+                    array[currentIndex] = array[RandomIndex];
+                    array[RandomIndex] = temporaryValue;
+                }
+                return array;
+            }
+            function randomize()
+            {
+                var start = document.getElementById("start").value;
+                var end = document.getElementById("end").value;
+                var range = document.getElementById("range").value;
+                var arr = [start, end];
+                arr = rng(arr)
+                document.getElementById("Here!").innerHTML = (arr)
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header"><h1 class="mathgenie">MATH GENIOUS</h1>
+            <div class="headerSelections">
+                <div class="headerTitles"> Number Conversion </div>
+                <div class="headerTitles"> Number Table </div>
+                <div class="headerTitles"> Combinatorics </div>
+                <div class="headerTitles"> Truth tables </div>
+                <div class="headerTitles"> Random Values </div>
+                <div class="headerTitles"> Surprise Math </div>
+            </div>
+        </div>
+        <div class="content"><h1>Random number generator</h1>
+            <div>Give here your starting value <input id="start"></div>
+            <div>Give here your ending value <input id="end"></div>
+            <div>Give here the amount of numbers you want from this range <input id="range"></div>
+            <button onclick="randomize()">Randomize!</button>
+            <div id="Here!" class="Randomized"></div>
+        </div>
+    </body>
+</html>
