@@ -49,7 +49,7 @@ body
 {
     width: 100%;
     border: solid black 1px;
-    padding: 50px;
+    padding: 10px;
     background-color: crimson;
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -62,7 +62,7 @@ body
 button
 {
     border-radius: 20px;
-    width: 100px;
+    width: minmax(100px, auto);
     height: 25px;
     background-color: aqua;
     font-weight: bold;

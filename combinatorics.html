@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="styles.css">
         <script>
             function factorial(num)
             {
@@ -14,45 +15,115 @@
                     {
                     num = num*i ;
                     }
-                    return num;
-                    console.log(num)
+                    console.log("hello" +num)
+                    return num;   
                 }
             }
             function combinations()
             {
                 var A = document.getElementById("AllObjects").value;
                 var S = document.getElementById("SelectedObjects").value;
+                var per_or_com = document.getElementById("pORc").innerHTML;
+                var replacement_or_not = document.getElementById("replacement").innerHTML;
                 console.log("A: " + A);
                 console.log("S: " + S);
-                if(A == S)
+                if ( A <= 0 || S <= 0 )
                 {
-                    document.getElementById("result").innerHTML = "When there are " + A 
-                    + " objects and you choose " + S + " objects. There is only one way to choose it" ;
+                    alert("Please insert positive numbers");
                 }
-                else
+                if ( per_or_com == "permutation")
                 {
-                    var answer = (factorial(A)/(factorial(S)*factorial(A-S)))
-                    if (answer <= 0)
+                    if (replacement_or_not == "with replacement")
                     {
-                        document.getElementById("result").innerHTML = "";
-                        alert("Your set is smaller than the amount of chosed objects"); 
+                        var per_answer_replacement = Math.pow(A, S);
+                        document.getElementById("result").innerHTML = "When there are " + A 
+                        + " objects and you choose " + S + " objects of those, the order is significant and one object can be chosen multiple times. There are " 
+                        + per_answer_replacement + " different ways to make the choise" ;
                     }
                     else
                     {
+                        var per_answer = (factorial(A)/factorial(A-S));
+                        if ( per_answer <= 0)
+                        {
+                            document.getElementById("result").innerHTML = "";
+                            alert("Your set is smaller than the amount of chosed objects"); 
+                        }
+                        else
+                        {
+                            document.getElementById("result").innerHTML = "When there are " + A 
+                            + " objects and you choose " + S + " objects of those and the order is significant. There are " 
+                            + per_answer + " different ways to make the choise" ;
+                        }
+                    }
+                }
+                else
+                {
+                    if(A == S)
+                    {
                         document.getElementById("result").innerHTML = "When there are " + A 
-                        + " objects and you choose " + S + " objects of those. There are " + answer + " different ways to make the choise" ;
+                        + " objects and you choose " + S + " objects. There is only one way to choose it" ;
+                    }
+                    else
+                    {
+                        var answer = (factorial(A)/(factorial(S)*factorial(A-S)))
+                        if (answer <= 0)
+                        {
+                            document.getElementById("result").innerHTML = "";
+                            alert("Your set is smaller than the amount of chosed objects"); 
+                        }
+                        else
+                        {
+                            document.getElementById("result").innerHTML = "When there are " + A 
+                            + " objects and you choose " + S + " objects of those. There are " + answer + " different ways to make the choise" ;
+                        }
                     }
                 }  
             }
+            function changeText()
+            {
+                var text_element = document.getElementById("pORc");
+                if (text_element.innerHTML == "permutation")
+                {
+                    text_element.innerHTML = "combination";
+                }
+                else
+                {
+                    text_element.innerHTML = "permutation" ;
+                }
+            }
+            function changeText2()
+            {
+                var text_element2 = document.getElementById("replacement");
+                if (text_element2.innerHTML == "with replacement")
+                {
+                    text_element2.innerHTML = "without replacement";
+                }
+                else
+                {
+                    text_element2.innerHTML = "with replacement" ;
+                }
+            }
+
         </script>
     </head>
     <body>
+        <div class="header"><h1 class="mathgenie">MATH GENIOUS</h1>
+            <div class="headerSelections">
+                <div class="headerTitles"><a href="NumberConversions.html">Number Conversion</a></div>
+                <div class="headerTitles"><a href="Number_Table.html">Number Table</a></div>
+                <div class="headerTitles"><a href="combinatorics.html"> Combinatorics</a> </div>
+                <div class="headerTitles"><a href="TruthTables.html">Truth tables</a></div>
+                <div class="headerTitles"><a href="RandomValues.html">Random Values</a></div>
+                <div class="headerTitles"><a href="SurpriseMath.html"> Surprise Math</a> </div>
+            </div>
+        </div>
         <div>Hello, here you can do some maths related to combinatorics</div>
         Please state the total amount of ojects that are in the set:<input type="number" min="1" id="AllObjects"> <br>
         Please state how many objects you would like to choose from that set: <input type="number" min="1" id="SelectedObjects">
         <button onclick="combinations()">Press here to do the math</button>
         <div id="result"></div>
-        <button onclick="permutations()">Press here to permutate</button>
+        <button id="pORc" onClick="changeText()">permutation</button>
+        <button id="replacement" onClick="changeText2()">with replacement</button> 
 
         
     </body>
