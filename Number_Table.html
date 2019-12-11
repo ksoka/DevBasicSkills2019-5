@@ -5,37 +5,37 @@
         <script>
             function table_change()
             {
-                var table = '';
-                    var rows = 51;
-                    var cols = 4;
-                    var bin = parseInt(c,16);
-                    for (var r = 0; r < rows; r++)
+                var container = document.getElementById("container"); 
+                var tbl = document.createElement("table");
+                for (var r = 0; r <= 50; r++) 
+                {
+                    var row = document.createElement("tr");
+                    for (var c = 0; c < 4; c++) 
                     {
-                        table += ("<tr>");
-                        for( var c = 0; c < cols; c++)
+                        var cell = document.createElement("td");
+                        if (c == 0)
                         {
-                            if(c==0)
-                            {
-                                table += '<td>' + r.toString(10) + '</td>';
-                            }
-                            if(c==1)
-                            {
-                                table += '<td>' + r.toString(2) + '</td>';
-                            }
-                            if(c==2)
-                            {
-                                table += '<td>' + r.toString(8) + '</td>';
-                            }
-                            if(c==3)
-                            {
-                                table += '<td>' + r.toString(16) + '</td>';
-                            }
+                            var numbers = document.createTextNode(r);
                         }
-                        table += "<td>";
+                        if (c == 1)
+                        {
+                            var numbers = document.createTextNode(r.toString(2));
+                        }
+                        if (c == 2)
+                        {
+                            var numbers = document.createTextNode(r.toString(8));
+                        }
+                        if (c == 3)
+                        {
+                            var numbers = document.createTextNode(r.toString(16));
+                        }
+                        cell.appendChild(numbers);
+                        row.appendChild(cell);
                     }
-                    document.getElementById('addtable').innerHTML = "here is your table"
-                    document.getElementById('addtable').innerHTML += ('<table id="remove">' + table + '</table>')
-                } 
+                    tbl.appendChild(row);
+                }
+                container.appendChild(tbl);
+            }
             </script>
     </head>
     <body>
@@ -50,15 +50,8 @@
             </div>
         </div>
         <div class="content"><h1>Table of conversions between binary, octal, decimal and hexadecimal counting systems</h1>
-        <button onclick="table_change()">Click me </button>
-        <table id ="addtable" class="Numbertable">
-                <tr>
-                    <td>Dec</td>
-                    <td>Bin</td>
-                    <td>Oct</td>
-                    <td>Hex</td>
-                </tr>
-            </table>
+            <button onclick="table_change()">Click me </button>
+            <div id="container"></div>
         </div>
     </body>
 </html>
