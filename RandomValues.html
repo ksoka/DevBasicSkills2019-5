@@ -22,7 +22,11 @@
                 var start = document.getElementById("start").value;
                 var end = document.getElementById("end").value;
                 var range = document.getElementById("range").value;
-                var arr = [start, end];
+                var arr = []
+                for (let i = start; i <= end; i++)
+                {
+                    arr.push(i);
+                }
                 arr = rng(arr)
                 document.getElementById("Here!").innerHTML = (arr)
             }
