@@ -73,6 +73,7 @@ button
 .content
 {
     margin-top: 250px;
+    padding: 20px;
 }
 button:hover
 {
@@ -81,6 +82,12 @@ button:hover
 .center
 {
     text-align: center;
+}
+input
+{
+    border-radius: 20px;
+    background-color: pink;
+    padding-left: 5px;
 }
 
 /*Number conversions */
@@ -101,21 +108,12 @@ button:hover
 {
     padding: 25px;
 }
-
-
-
-
-
-
 /* Number Tables */
 .Numbertable
 {
     width: 50%;
     margin: 50px;
 }
-
-
-
 /*Combinatorics*/
 
 
@@ -127,12 +125,10 @@ button:hover
     width: 25%;
     margin: 50px;
 }
-
 .trs
 {
     border: 1px solid black;
 }
-
 /*random values*/
 .Randomized
 {

@@ -28,7 +28,8 @@
                     arr.push(i);
                 }
                 arr = rng(arr)
-                document.getElementById("Here!").innerHTML = (arr)
+                arr.length = range
+                document.getElementById("Here").innerHTML = (arr)
             }
         </script>
     </head>
@@ -44,11 +45,11 @@
             </div>
         </div>
         <div class="content"><h1>Random number generator</h1>
-            <div>Give here your starting value <input id="start" type="number"></div>
-            <div>Give here your ending value <input id="end" type="number"></div>
-            <div>Give here the amount of numbers you want from this range <input id="range" type="number"></div>
+            <div>Give here your starting value <input id="start" type="number" min="1"></div>
+            <div>Give here your ending value <input id="end" type="number" min="1"></div>
+            <div>Give here the amount of numbers you want from this range <input id="range" type="number" min="1"></div>
             <button onclick="randomize()">Randomize!</button>
-            <div id="Here!" class="Randomized"></div>
+            <div id="Here" class="Randomized"></div>
         </div>
     </body>
 </html>
