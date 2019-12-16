@@ -18,31 +18,50 @@
                 return array;
             }
             function randomize()
-            {
-                var start = document.getElementById("start").value;
-                var end = document.getElementById("end").value;
-                var range = document.getElementById("range").value;
+            {  
+                var start = parseInt(document.getElementById("start").value);
+                var end = parseInt(document.getElementById("end").value);
+                var range = parseInt(document.getElementById("range").value);
                 var arr = []
-                if (start >= end)
-                {
-                    alert("Starting value cannot be bigger than ending value");
-                }
-                else
-                {
-                    for (let i = start; i <= end; i++)
+                console.log("start" + start)
+                console.log("end" + end)
+                console.log("tyyppi" + typeof start);
+
+                if (document.getElementById("noSameNumbers").checked == true)
+                {   
+                    if (start >= end)
                     {
-                        arr.push(i);
-                    }
-                    arr = rng(arr)
-                    arr.length = range
-                    if (range > end)
-                    {
-                        alert("give value smaller or equal to end number");
+                        alert("Starting value cannot be bigger than ending value");
                     }
                     else
                     {
-                        document.getElementById("Here").innerHTML = (arr)
+                        for (let i = start; i <= end; i++)
+                        {
+                            arr.push(i);
+                        }
+                        arr = rng(arr)
+                        arr.length = range
+                        if (range > end)
+                        {
+                            alert("give value smaller or equal to end number");
+                        }
+                        else
+                        {
+                            document.getElementById("Here").innerHTML = (arr);
+                        }
                     }
+                }
+                if (document.getElementById("yesSameNumbers").checked == true)
+                {
+                    for (let i = 0; i < range; i++)
+                    {
+                        console.log("start" + start)
+                        console.log("end" + end)
+                        rndNumber = Math.floor(Math.random() * (end - start) + start);
+                        arr.push(rndNumber);
+                    }
+                    arr.sort();
+                    document.getElementById("Here").innerHTML = (arr);
                 }
             }
         </script>
@@ -62,7 +81,9 @@
             <div>Give here your starting value <input id="start" type="number" min="1"></div>
             <div>Give here your ending value <input id="end" type="number" min="1"></div>
             <div>Give here the amount of numbers you want from this range <input id="range" type="number" min="1"></div>
-            <button onclick="randomize()">Randomize!</button>
+            <button onclick="randomize()">Randomize!</button> <br>
+            <input type="radio" name="sameNumbers" id="noSameNumbers" checked="checked"> Same number cannot be printed twice <br>
+            <input type="radio" name="sameNumbers" id="yesSameNumbers"> totally random, same number can be printed
             <div id="Here" class="Randomized"></div>
         </div>
     </body>
