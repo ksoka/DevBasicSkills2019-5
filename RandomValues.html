@@ -23,13 +23,27 @@
                 var end = document.getElementById("end").value;
                 var range = document.getElementById("range").value;
                 var arr = []
-                for (let i = start; i <= end; i++)
+                if (start >= end)
                 {
-                    arr.push(i);
+                    alert("Starting value cannot be bigger than ending value");
                 }
-                arr = rng(arr)
-                arr.length = range
-                document.getElementById("Here").innerHTML = (arr)
+                else
+                {
+                    for (let i = start; i <= end; i++)
+                    {
+                        arr.push(i);
+                    }
+                    arr = rng(arr)
+                    arr.length = range
+                    if (range > end)
+                    {
+                        alert("give value smaller or equal to end number");
+                    }
+                    else
+                    {
+                        document.getElementById("Here").innerHTML = (arr)
+                    }
+                }
             }
         </script>
     </head>
