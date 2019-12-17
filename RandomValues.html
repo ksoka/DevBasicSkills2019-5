@@ -43,11 +43,11 @@
                         arr.length = range
                         if (range > end)
                         {
-                            alert("give value smaller or equal to end number");
+                            alert("give the range smaller or equal to end number");
                         }
                         else
                         {
-                            document.getElementById("Here").innerHTML = (arr);
+                            document.getElementById("Here").innerHTML = ("Here are your random numbers randomly: " + arr);
                         }
                     }
                 }
@@ -59,9 +59,12 @@
                         console.log("end" + end)
                         rndNumber = Math.floor(Math.random() * (end - start) + start);
                         arr.push(rndNumber);
-                    }
-                    arr.sort();
-                    document.getElementById("Here").innerHTML = (arr);
+                    }  
+                    arr.sort(function(a, b)
+                    {
+                    return a - b
+                    });
+                    document.getElementById("Here").innerHTML = ("Here are your random numbers in ascending order: " + arr);
                 }
             }
         </script>
@@ -83,7 +86,7 @@
             <div>Give here the amount of numbers you want from this range <input id="range" type="number" min="1"></div>
             <button onclick="randomize()">Randomize!</button> <br>
             <input type="radio" name="sameNumbers" id="noSameNumbers" checked="checked"> Same number cannot be printed twice <br>
-            <input type="radio" name="sameNumbers" id="yesSameNumbers"> totally random, same number can be printed
+            <input type="radio" name="sameNumbers" id="yesSameNumbers"> Same numbers can be printed multiple times
             <div id="Here" class="Randomized"></div>
         </div>
     </body>
