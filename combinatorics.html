@@ -34,8 +34,8 @@
                     {
                         var per_answer_replacement = Math.pow(A, S);
                         document.getElementById("result").innerHTML = "When there are " + A 
-                        + " objects and you choose " + S + " objects of those, the order is significant and one object can be chosen multiple times. There are " 
-                        + per_answer_replacement + " different ways to make the choise" ;
+                        + " objects and you choose " + S + " objects of those, the order is significant and one object can be chosen multiple times. There are <b>" 
+                        + per_answer_replacement + "</b> different ways to make the choise" ;
                     }
                     else
                     {
@@ -48,8 +48,8 @@
                         else
                         {
                             document.getElementById("result").innerHTML = "When there are " + A 
-                            + " objects and you choose " + S + " objects of those and the order is significant. There are " 
-                            + per_answer + " different ways to make the choise" ;
+                            + " objects and you choose " + S + " objects of those and the order is significant. There are <b>" 
+                            + per_answer + "</b> different ways to make the choise" ;
                         }
                     }
                 }
@@ -58,7 +58,7 @@
                     if(A == S)
                     {
                         document.getElementById("result").innerHTML = "When there are " + A 
-                        + " objects and you choose " + S + " objects. There is only one way to choose it" ;
+                        + " objects and you choose " + S + " objects. There is only <b> one </> way to choose it" ;
                     }
                     else
                     {
@@ -71,7 +71,7 @@
                         else
                         {
                             document.getElementById("result").innerHTML = "When there are " + A 
-                            + " objects and you choose " + S + " objects of those. There are " + answer + " different ways to make the choise" ;
+                            + " objects and you choose " + S + " objects of those. There are <b>" + answer + "</b> different ways to make the choise" ;
                         }
                     }
                 }  
@@ -81,10 +81,15 @@
                 var text_element = document.getElementById("pORc");
                 if (text_element.innerHTML == "permutation")
                 {
+                    document.getElementById('withReplacement').disabled=true;
+                    document.getElementById('withoutReplacement').disabled=true;
                     text_element.innerHTML = "combination";
                 }
                 else
                 {
+                    
+                    document.getElementById('withReplacement').disabled=false;
+                    document.getElementById('withoutReplacement').disabled=false;
                     text_element.innerHTML = "permutation" ;
                 }
             }
@@ -107,9 +112,9 @@
         Please state how many objects you would like to choose from that set: <input type="number" min="1" id="SelectedObjects">
         <button onclick="combinations()">Press here to do the math</button>
         <div id="result"></div>
-        <button id="pORc" onClick="changeText()">permutation</button> <br>
-        <input type="radio" name="replacement" id="withReplacement" checked="checked"> Replacement is allowed <br>
-        <input type="radio" name="replacement" id="withoutReplacement"> Replacement is not allowed
+        <button id="pORc" onclick="changeText(), combinations()">permutation</button> <br>
+        <input type="radio" name="replacement" id="withReplacement" checked="checked" onclick="combinations()"> Replacement is allowed <br>
+        <input type="radio" name="replacement" id="withoutReplacement" onclick="combinations()"> Replacement is not allowed
         </div>
     </body>
 </html>
