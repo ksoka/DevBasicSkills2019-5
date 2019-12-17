@@ -3,6 +3,59 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="styles.css">
+        <script>
+            var P
+            var Q
+            function andfunction()
+            {
+                P = [1,1,0,0]
+                Q = [1,0,1,0]
+               // document.getElementById('inserthere').innerHTML = Boolean(P&&Q)
+
+                var container = document.getElementById("container"); 
+                    var tbl = document.createElement("table");
+                    tbl.setAttribute("id", "truthTable");
+                    for (var r = 0; r <= 4; r++) 
+                    {
+                        var row = document.createElement("tr");
+                        for (var c = 0; c < 3; c++) 
+                        {
+                            var cell = document.createElement("td");
+                            if (c == 0)
+                            {
+                                var numbers = document.createTextNode(r);
+                            }
+                            if (c == 1)
+                            {
+                                var numbers = document.createTextNode(r.toString(2));
+                            }
+                            if (c == 2)
+                            {
+                                var numbers = document.createTextNode(r.toString(8));
+                            }
+                            if (c == 3)
+                            {
+                                var numbers = document.createTextNode(r.toString(16));
+                            }
+                            cell.appendChild(numbers);
+                            row.appendChild(cell);
+                        }
+                        tbl.appendChild(row);
+                    }
+                    container.appendChild(tbl);
+                    var table = document.getElementById("myTable");
+                    var header = table.createTHead();
+                    var insertrow = header.insertRow(0);
+                    var insertcell = insertrow.insertCell(0);
+                    insertcell.innerHTML = "<b>DEC</b>";
+                    var insertcell = insertrow.insertCell(1);
+                    insertcell.innerHTML = "<b>BIN</b>";
+                    var insertcell = insertrow.insertCell(2);
+                    insertcell.innerHTML = "<b>OCT</b>";
+                    var insertcell = insertrow.insertCell(3);
+                    insertcell.innerHTML = "<b>HEX</b>";
+            }
+        </script>
     </head>
     <body>
         <div class="header"><h1 class="mathgenie"><a href="index.html">MATH GENIOUS</a></h1>
@@ -20,7 +73,7 @@
         <button onclick="orfunction()">P &#8744 Q</button>
         <button onclick="xorfunction()">P &#8853 Q</button>
         <button onclick="negation()">&#172 P</button>
-        <table class="truthtable">
+        <table class="truthtable" id="inserthere">
             <tr>
                 <td>P &#8743 Q</td>  
                 <td>P &#8744 Q</td> 
@@ -28,7 +81,7 @@
                 <td> &#172 P</td>          
             </tr>
         </table>
-
+        <div class="container"></div>
         
     </div>
     </body>
