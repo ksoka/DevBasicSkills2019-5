@@ -58,14 +58,15 @@
             }
             function changeText()
             {
+                var element = document.getElementById("myTable")
                 var text_element = document.getElementById("showTable");
-                if (text_element.innerHTML == "Click me to insert a table")
+                if ( typeof(element) != "undefined" && element != null)
                 {
-                    text_element.innerHTML = "Click me to remove the table";
+                    text_element.innerHTML = "Click me to insert the table";
                 }
                 else
                 {
-                    text_element.innerHTML = "Click me to insert a table" ;
+                    text_element.innerHTML = "Click me to remove a table" ;
                 }
             }
             </script>
@@ -82,7 +83,7 @@
             </div>
         </div>
         <div class="content"><h1>Table of conversions between binary, octal, decimal and hexadecimal counting systems</h1>
-            <button id="showTable" onclick="table_change(), changeText()">Click me to insert a table </button>
+            <button id="showTable" onclick="changeText(), table_change()">Click me to insert a table </button>
             <div id="container" class="Numbertable"></div>
         </div>
     </body>

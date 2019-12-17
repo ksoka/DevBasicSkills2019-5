@@ -71,10 +71,9 @@
             </div>
         </div>
         <div class="content center">To convert between different numeral systems: <br>
-            please choose from what numbering system you want to convert 
+            please choose from what numbering system you want to convert and type in a number<br>
             <button onclick="inputSystem()" id="inputSystem">Decimal</button>
-            <input type="text" placeholder="Type a number..." id="numInput"> 
-            <button onclick="numberConvert()">Convert</button>
+            <input type="text" placeholder="Type a number..." id="numInput" onkeyup="numberConvert()"> 
         </div>
         <div id="numberInput" class="center answer">0 is</div>
         <div class="gridcontainer">
