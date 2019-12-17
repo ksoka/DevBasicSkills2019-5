@@ -56,10 +56,12 @@
                 {
                     systemIndex = 0 ;
                 }
+                document.getElementById("numInput").value = "";
             }
         </script>
     </head>
     <body>
+        <div class="testi">
         <div class="header"><h1 class="mathgenie"><a href="index.html">MATH GENIUS</a></h1>
             <div class="headerSelections">
                 <div class="headerTitles"><a href="NumberConversions.html">Number Conversion</a></div>
@@ -71,18 +73,22 @@
             </div>
         </div>
         <div class="content center">To convert between different numeral systems: <br>
-            please choose from what numbering system you want to convert and type in a number<br>
-            <button onclick="inputSystem()" id="inputSystem">Decimal</button>
+            please first choose from what numbering system you want to convert <br>
+            <button onclick="inputSystem()" id="inputSystem">Decimal</button> <br>
+            and then type in a number <br>
+            
             <input type="text" placeholder="Type a number..." id="numInput" onkeyup="numberConvert()"> 
         </div>
         <div id="numberInput" class="center answer">0 is</div>
         <div class="gridcontainer">
+            <div class="emptyGrid"></div>
             <div id="decOutput" class="gridUnit">0 in decimal</div>
             <div id="binOutput" class="gridUnit">0 in binary</div>
+            <div class="emtyGrid"></div>
             <div id="octOutput" class="gridUnit">0 in octal</div>
             <div id="hexOutput" class="gridUnit">0 in hexadecimal</div>
         </div>
-        
+        </div>
 
 
     </body>
