@@ -28,7 +28,7 @@ body
 .ads
 {
     grid-row:span 5;
-    width: 150px;
+    background-color: white;
 }
 .header
 {
