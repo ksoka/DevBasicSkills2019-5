@@ -129,9 +129,9 @@ input
     width: 25%;
     margin: 50px;
 }
-.trs
+td
 {
-    border: 1px solid black;
+    padding: 15px;
 }
 /*random values*/
 .Randomized
