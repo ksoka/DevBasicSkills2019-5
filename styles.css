@@ -24,6 +24,20 @@ body
     justify-content: center;
     background-color: crimson;
     font-size: 30px;
+    
+}
+.optButton:hover
+{
+    background-color: pink;
+    border: 1px solid white;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    transition-duration: 0.5s;
+}
+.intro
+{
+    grid-column: span 3;
 }
 .ads
 {
@@ -54,6 +68,13 @@ body
     border: solid black 1px;
     padding: 10px;
     background-color: crimson;
+
+}
+.headerTitles:hover
+{
+    background-color: pink;
+    border: 1px solid white;
+    transition-duration: 0.5s;
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
