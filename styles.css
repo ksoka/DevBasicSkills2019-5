@@ -187,3 +187,15 @@ td
 }
 
 /*surprise math*/
+.containerSurprise
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.flexItem
+{
+    font-size: 30pt;
+    height: 75px;
+}
