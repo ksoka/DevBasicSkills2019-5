@@ -61,58 +61,56 @@
                 }
             }
             function orfunction()
-           {
+            {
             var container = document.getElementById("container"); 
-                var element = document.getElementById("truthTable")
-                if ( typeof(element) != "undefined" && element != null)
+            var element = document.getElementById("truthTable")
+            if ( typeof(element) != "undefined" && element != null)
+            {
+                element.remove();
+            }
+            else
+            {
+                var container = document.getElementById("cont"); 
+                var tbl = document.createElement("table");
+                tbl.setAttribute("id", "truthTable");
+                var i=-1
+                for (var r = 0; r < 4; r++) 
                 {
-                    element.remove();
-                }
-                else
-                {
-                    var container = document.getElementById("cont"); 
-                    var tbl = document.createElement("table");
-                    tbl.setAttribute("id", "truthTable");
-                    var i=-1
-                    for (var r = 0; r < 4; r++) 
+                    i++
+                    var row = document.createElement("tr");
+                    for (var c = 0; c < 3; c++) 
                     {
-                        i++
-                        var row = document.createElement("tr");
-                        for (var c = 0; c < 3; c++) 
+                        var cell = document.createElement("td");
+                        if (c == 0)
                         {
-                            var cell = document.createElement("td");
-                            if (c == 0)
-                            {
-                                var numbers = document.createTextNode(P[i]);
-                                
-                            }
-                            if (c == 1)
-                            {
-                                var numbers = document.createTextNode(Q[i]);
-                                
-                            }
-                            if (c == 2)
-                            {
-                                var numbers = document.createTextNode(Boolean(P[i] || Q[i]));
-                            }
-                            cell.appendChild(numbers);
-                            row.appendChild(cell);
+                            var numbers = document.createTextNode(P[i]);    
                         }
-                            tbl.appendChild(row);
+                        if (c == 1)
+                        {
+                            var numbers = document.createTextNode(Q[i]);                    
+                        }
+                        if (c == 2)
+                        {
+                            var numbers = document.createTextNode(Boolean(P[i] || Q[i]));
+                        }
+                        cell.appendChild(numbers);
+                        row.appendChild(cell);
                     }
-                    container.appendChild(tbl);
-                    var table = document.getElementById("truthTable");
-                    var header = table.createTHead();
-                    var insertrow = header.insertRow(0);
-                    var insertcell = insertrow.insertCell(0);
-                    insertcell.innerHTML = "<b>P</b>";
-                    var insertcell = insertrow.insertCell(1);
-                    insertcell.innerHTML = "<b>Q</b>";
-                    var insertcell = insertrow.insertCell(2);
-                    insertcell.innerHTML = "<b>P &#8744 Q</b>";
+                    tbl.appendChild(row);
                 }
-           }
-                function xorfunction()
+                container.appendChild(tbl);
+                var table = document.getElementById("truthTable");
+                var header = table.createTHead();
+                var insertrow = header.insertRow(0);
+                var insertcell = insertrow.insertCell(0);
+                insertcell.innerHTML = "<b>P</b>";
+                var insertcell = insertrow.insertCell(1);
+                insertcell.innerHTML = "<b>Q</b>";
+                var insertcell = insertrow.insertCell(2);
+                insertcell.innerHTML = "<b>P &#8744 Q</b>";
+                }
+            }
+        function xorfunction()
                 {
                     var container = document.getElementById("container"); 
                 var element = document.getElementById("truthTable")
@@ -136,12 +134,10 @@
                             if (c == 0)
                             {
                                 var numbers = document.createTextNode(P[i]);
-                                
                             }
                             if (c == 1)
                             {
-                                var numbers = document.createTextNode(Q[i]);
-                                
+                                var numbers = document.createTextNode(Q[i]);  
                             }
                             if (c == 2)
                             {
@@ -150,7 +146,7 @@
                             cell.appendChild(numbers);
                             row.appendChild(cell);
                         }
-                            tbl.appendChild(row);
+                        tbl.appendChild(row);
                     }
                     container.appendChild(tbl);
                     var table = document.getElementById("truthTable");
@@ -162,53 +158,52 @@
                     insertcell.innerHTML = "<b>Q</b>";
                     var insertcell = insertrow.insertCell(2);
                     insertcell.innerHTML = "<b>P &#8853 Q</b>";
-                 }
-             }
+                }
+            }
              
         function negation()
         {
             var container = document.getElementById("container"); 
-                var element = document.getElementById("truthTable")
-                if ( typeof(element) != "undefined" && element != null)
+            var element = document.getElementById("truthTable")
+            if ( typeof(element) != "undefined" && element != null)
+            {
+                element.remove();
+            }
+            else
+            {
+                var container = document.getElementById("cont"); 
+                var tbl = document.createElement("table");
+                tbl.setAttribute("id", "truthTable");
+                var i=0
+                for (var r = 0; r < 2; r++) 
                 {
-                    element.remove();
-                }
-                else
-                {
-                    var container = document.getElementById("cont"); 
-                    var tbl = document.createElement("table");
-                    tbl.setAttribute("id", "truthTable");
-                    var i=0
-                    for (var r = 0; r < 2; r++) 
+                    i++
+                    var row = document.createElement("tr");
+                    for (var c = 0; c < 3; c++) 
                     {
-                        i++
-                        var row = document.createElement("tr");
-                        for (var c = 0; c < 3; c++) 
+                        var cell = document.createElement("td");
+                        if (c == 0)
                         {
-                            var cell = document.createElement("td");
-                            if (c == 0)
-                            {
-                                var numbers = document.createTextNode(P[i]);
-                                
-                            }
-                            if (c == 2)
-                            {
-                                var numbers = document.createTextNode(Boolean(!P[i]));
-                            }
-                            cell.appendChild(numbers);
-                            row.appendChild(cell);
+                            var numbers = document.createTextNode(P[i]);   
                         }
-                            tbl.appendChild(row);
+                        if (c == 2)
+                        {
+                            var numbers = document.createTextNode(Boolean(!P[i]));
+                        }
+                        cell.appendChild(numbers);
+                        row.appendChild(cell);
                     }
-                    container.appendChild(tbl);
-                    var table = document.getElementById("truthTable");
-                    var header = table.createTHead();
-                    var insertrow = header.insertRow(0);
-                    var insertcell = insertrow.insertCell(0);
-                    insertcell.innerHTML = "<b>P</b>";
-                    var insertcell = insertrow.insertCell(1);
-                    insertcell.innerHTML = "<b>&#172 P</b>";
-                 }
+                    tbl.appendChild(row);
+                }
+                container.appendChild(tbl);
+                var table = document.getElementById("truthTable");
+                var header = table.createTHead();
+                var insertrow = header.insertRow(0);
+                var insertcell = insertrow.insertCell(0);
+                insertcell.innerHTML = "<b>P</b>";
+                var insertcell = insertrow.insertCell(1);
+                insertcell.innerHTML = "<b>&#172 P</b>";
+            }
         }
         </script>
     </head>
@@ -228,10 +223,7 @@
         <button onclick="orfunction()">P &#8744 Q</button>
         <button onclick="xorfunction()">P &#8853 Q</button>
         <button onclick="negation()">&#172 P</button>
-        <table class="truthtable" id="inserthere">
-        </table>
-        <div id="cont"></div>
-        
+        <div id="cont"></div>   
     </div>
     </body>
 </html>
