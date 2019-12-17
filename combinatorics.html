@@ -24,16 +24,13 @@
                 var A = document.getElementById("AllObjects").value;
                 var S = document.getElementById("SelectedObjects").value;
                 var per_or_com = document.getElementById("pORc").innerHTML;
-                var replacement_or_not = document.getElementById("replacement").innerHTML;
-                console.log("A: " + A);
-                console.log("S: " + S);
                 if ( A <= 0 || S <= 0 )
                 {
                     alert("Please insert positive numbers");
                 }
                 if ( per_or_com == "permutation")
                 {
-                    if (replacement_or_not == "with replacement")
+                    if (document.getElementById("withReplacement").checked == true)
                     {
                         var per_answer_replacement = Math.pow(A, S);
                         document.getElementById("result").innerHTML = "When there are " + A 
@@ -91,19 +88,6 @@
                     text_element.innerHTML = "permutation" ;
                 }
             }
-            function changeText2()
-            {
-                var text_element2 = document.getElementById("replacement");
-                if (text_element2.innerHTML == "with replacement")
-                {
-                    text_element2.innerHTML = "without replacement";
-                }
-                else
-                {
-                    text_element2.innerHTML = "with replacement" ;
-                }
-            }
-
         </script>
     </head>
     <body>
@@ -123,9 +107,9 @@
         Please state how many objects you would like to choose from that set: <input type="number" min="1" id="SelectedObjects">
         <button onclick="combinations()">Press here to do the math</button>
         <div id="result"></div>
-        <button id="pORc" onClick="changeText()">permutation</button>
-        <button id="replacement" onClick="changeText2()">with replacement</button> 
+        <button id="pORc" onClick="changeText()">permutation</button> <br>
+        <input type="radio" name="replacement" id="withReplacement" checked="checked"> Replacement is allowed <br>
+        <input type="radio" name="replacement" id="withoutReplacement"> Replacement is not allowed
         </div>
-        
     </body>
 </html>
