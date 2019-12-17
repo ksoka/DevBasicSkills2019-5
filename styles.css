@@ -93,6 +93,53 @@ input
     background-color: pink;
     padding-left: 5px;
 }
+a
+{
+    color: black;
+    text-decoration: none;
+}
+/*text Animation */
+.anim 
+{
+    font-size: 75px;
+    display: inline-block;
+    animation-name: characters;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;  
+}
+ 
+.anim:nth-of-type(0n+2) { animation-delay: 250ms; }
+.anim:nth-of-type(0n+3) { animation-delay: 500ms; }
+.anim:nth-of-type(0n+4) { animation-delay: 750ms; }
+.anim:nth-of-type(0n+5) { animation-delay: 1000ms; }
+.anim:nth-of-type(0n+6) { animation-delay: 1250ms; }
+.anim:nth-of-type(0n+7) { animation-delay: 1500ms; }
+.anim:nth-of-type(0n+8) { animation-delay: 1750ms; }
+.anim:nth-of-type(0n+9) { animation-delay: 2000ms; }
+.anim:nth-of-type(0n+10) { animation-delay: 2250ms; }
+.anim:nth-of-type(0n+11) { animation-delay: 2500ms; }
+
+@keyframes characters 
+{
+    0% 
+    {
+      transform: translateY(-500px) translateX(-500px) rotate(180deg);
+    }
+    50% 
+    {
+      transform: translateY(-50px) translateX(-50px) rotate(180deg);
+      color: pink;
+    }
+    75%
+    {
+        transform: translateY(0px) rotate(180deg);
+        color: blue;
+    }
+    100% 
+    {
+      transform: translateY(0px) rotate(0deg);
+    }
+}
 
 /*Number conversions */
 .gridcontainer
