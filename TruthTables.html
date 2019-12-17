@@ -8,12 +8,8 @@
             var Q
             P = [1,1,0,0]
             Q = [1,0,1,0]
-            function table(operator)
+            function andfunction()
             {
-                P = [1,1,0,0]
-                Q = [1,0,1,0]
-                document.getElementById('inserthere').innerHTML = Boolean(P&&Q)
-
                 var container = document.getElementById("container"); 
                 var element = document.getElementById("truthTable")
                 if ( typeof(element) != "undefined" && element != null)
@@ -45,7 +41,7 @@
                             }
                             if (c == 2)
                             {
-                                var numbers = document.createTextNode(Boolean(P[i] + operator + Q[i]));
+                                var numbers = document.createTextNode(Boolean(P[i] && Q[i]));
                             }
                             cell.appendChild(numbers);
                             row.appendChild(cell);
@@ -64,15 +60,110 @@
                     insertcell.innerHTML = "<b>P &#8743 Q</b>";
                 }
             }
-            function andfunction()
-            {
-                operator = "&&"
-                table();
-            }
             function orfunction()
-            {
-                table("||");
-            }
+           {
+            var container = document.getElementById("container"); 
+                var element = document.getElementById("truthTable")
+                if ( typeof(element) != "undefined" && element != null)
+                {
+                    element.remove();
+                }
+                else
+                {
+                    var container = document.getElementById("cont"); 
+                    var tbl = document.createElement("table");
+                    tbl.setAttribute("id", "truthTable");
+                    var i=-1
+                    for (var r = 0; r < 4; r++) 
+                    {
+                        i++
+                        var row = document.createElement("tr");
+                        for (var c = 0; c < 3; c++) 
+                        {
+                            var cell = document.createElement("td");
+                            if (c == 0)
+                            {
+                                var numbers = document.createTextNode(P[i]);
+                                
+                            }
+                            if (c == 1)
+                            {
+                                var numbers = document.createTextNode(Q[i]);
+                                
+                            }
+                            if (c == 2)
+                            {
+                                var numbers = document.createTextNode(Boolean(P[i] || Q[i]));
+                            }
+                            cell.appendChild(numbers);
+                            row.appendChild(cell);
+                        }
+                            tbl.appendChild(row);
+                    }
+                    container.appendChild(tbl);
+                    var table = document.getElementById("truthTable");
+                    var header = table.createTHead();
+                    var insertrow = header.insertRow(0);
+                    var insertcell = insertrow.insertCell(0);
+                    insertcell.innerHTML = "<b>P</b>";
+                    var insertcell = insertrow.insertCell(1);
+                    insertcell.innerHTML = "<b>Q</b>";
+                    var insertcell = insertrow.insertCell(2);
+                    insertcell.innerHTML = "<b>P &#8743 Q</b>";
+                }
+           }
+                function xorfunction()
+                {
+                    var container = document.getElementById("container"); 
+                var element = document.getElementById("truthTable")
+                if ( typeof(element) != "undefined" && element != null)
+                {
+                    element.remove();
+                }
+                else
+                {
+                    var container = document.getElementById("cont"); 
+                    var tbl = document.createElement("table");
+                    tbl.setAttribute("id", "truthTable");
+                    var i=-1
+                    for (var r = 0; r < 4; r++) 
+                    {
+                        i++
+                        var row = document.createElement("tr");
+                        for (var c = 0; c < 3; c++) 
+                        {
+                            var cell = document.createElement("td");
+                            if (c == 0)
+                            {
+                                var numbers = document.createTextNode(P[i]);
+                                
+                            }
+                            if (c == 1)
+                            {
+                                var numbers = document.createTextNode(Q[i]);
+                                
+                            }
+                            if (c == 2)
+                            {
+                                var numbers = document.createTextNode(Boolean(P[i] && !Q[i]) || (!P[i] && Q[i]));
+                            }
+                            cell.appendChild(numbers);
+                            row.appendChild(cell);
+                        }
+                            tbl.appendChild(row);
+                    }
+                    container.appendChild(tbl);
+                    var table = document.getElementById("truthTable");
+                    var header = table.createTHead();
+                    var insertrow = header.insertRow(0);
+                    var insertcell = insertrow.insertCell(0);
+                    insertcell.innerHTML = "<b>P</b>";
+                    var insertcell = insertrow.insertCell(1);
+                    insertcell.innerHTML = "<b>Q</b>";
+                    var insertcell = insertrow.insertCell(2);
+                    insertcell.innerHTML = "<b>P &#8743 Q</b>";
+                }
+           }
         </script>
     </head>
     <body>
