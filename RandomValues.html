@@ -41,13 +41,22 @@
                         }
                         arr = rng(arr)
                         arr.length = range
-                        if (range > end)
+                        if (range > (end-start))
                         {
-                            alert("give the range smaller or equal to end number");
+                            alert("the amount of wanted numbers cannot be bigger than range");
                         }
                         else
                         {
-                            document.getElementById("Here").innerHTML = ("Here are your random numbers randomly: " + arr);
+                            document.getElementById("Here").innerHTML = ("Here are your random numbers randomly: ");
+                            for (let i = 0; i < arr.length; i++)
+                            {
+                                if (i % 20 == 0)
+                                {
+                                    document.getElementById("Here").innerHTML += "<br>";
+                                }
+                                document.getElementById("Here").innerHTML += arr[i] + ", ";   
+                            }
+                             
                         }
                     }
                 }
@@ -64,7 +73,15 @@
                     {
                     return a - b
                     });
-                    document.getElementById("Here").innerHTML = ("Here are your random numbers in ascending order: " + arr);
+                    document.getElementById("Here").innerHTML = ("Here are your random numbers in ascending order: ");
+                    for (let i = 0; i < arr.length; i++)
+                    {
+                        if (i % 20 == 0)
+                        {
+                            document.getElementById("Here").innerHTML += "<br>";
+                        }
+                        document.getElementById("Here").innerHTML += arr[i] + ", ";   
+                    }
                 }
             }
         </script>
