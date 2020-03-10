@@ -1,10 +1,14 @@
 body
 {
-    background-color:tomato;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: cornflowerblue;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
 }
 .grid-container
 {
+    margin-top: 200px;
     display: grid;
     grid-column-gap: 20px;
     grid-row-gap: 10px;
@@ -12,56 +16,212 @@ body
     grid-template-columns: auto auto auto auto auto;
     text-align: center;
 }
-.header
-{
-    font-size: 70pt;
-    text-align: center;
-    padding-bottom: 40px;
-}
 .options
 {
     border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: crimson;
+    font-size: 30px;
+    
+}
+.optButton:hover
+{
+    background-color: pink;
+    border: 1px solid white;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    transition-duration: 0.5s;
+}
+.intro
+{
+    grid-column: span 3;
 }
 .ads
 {
     grid-row:span 5;
+    background-color: white;
+}
+.header
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid black;
+    background-color: beige;
+    padding: 0;
+    margin: 0;
 }
 .headerSelections
 {
+    position: sticky;
     display:flex;
+    padding: 0px;
+    justify-content: space-evenly;
 }
 .headerTitles
 {
+    width: 100%;
     border: solid black 1px;
-    margin: 5px;
+    padding: 10px;
+    background-color: crimson;
+
+}
+.headerTitles:hover
+{
+    background-color: pink;
+    border: 1px solid white;
+    transition-duration: 0.5s;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.mathgenie
+{
+    font-size: 50pt;
+}
+button
+{
+    border-radius: 20px;
+    width: minmax(100px, auto);
+    height: 25px;
+    background-color: aqua;
+    font-weight: bold;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    margin-bottom: 10px;
+}
+.content
+{
+    margin-top: 250px;
+}
+button:hover
+{
+    background-color: pink;
+}
+.center
+{
+    text-align: center;
+}
+input
+{
+    border-radius: 20px;
+    background-color: pink;
+    padding-left: 5px;
+}
+a
+{
+    color: black;
+    text-decoration: none;
+}
+td
+{
+    border: 1px solid black;
+    padding: 15px;
+}
+/*text Animation */
+.anim 
+{
+    font-size: 75px;
+    display: inline-block;
+    animation-name: characters;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;  
+}
+ 
+.anim:nth-of-type(0n+2) { animation-delay: 250ms; }
+.anim:nth-of-type(0n+3) { animation-delay: 500ms; }
+.anim:nth-of-type(0n+4) { animation-delay: 750ms; }
+.anim:nth-of-type(0n+5) { animation-delay: 1000ms; }
+.anim:nth-of-type(0n+6) { animation-delay: 1250ms; }
+.anim:nth-of-type(0n+7) { animation-delay: 1500ms; }
+.anim:nth-of-type(0n+8) { animation-delay: 1750ms; }
+.anim:nth-of-type(0n+9) { animation-delay: 2000ms; }
+.anim:nth-of-type(0n+10) { animation-delay: 2250ms; }
+.anim:nth-of-type(0n+11) { animation-delay: 2500ms; }
+
+@keyframes characters 
+{
+    0% 
+    {
+      transform: translateY(-500px) translateX(-500px) rotate(180deg);
+    }
+    50% 
+    {
+      transform: translateY(-50px) translateX(-50px) rotate(180deg);
+      color: pink;
+    }
+    75%
+    {
+        transform: translateY(0px) rotate(180deg);
+        color: blue;
+    }
+    100% 
+    {
+      transform: translateY(0px) rotate(0deg);
+    }
 }
 
-
 /*Number conversions */
-
-
-
-
-
-
-
+.gridcontainer
+{
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    grid-template-rows: 70px 70px;
+    grid-template-columns:  100px auto auto 100px;
+    text-align: center;
+}
+.emptyGrid
+{
+    grid-row: span 2;
+}
+.gridUnit
+{
+    border: 1px solid black;
+    background-color: white;
+}
+.answer
+{
+    padding: 15px;
+}
 /* Number Tables */
-
-
-
-
-
+.Numbertable
+{
+    width: 50%;
+    margin: 50px;
+}
 /*Combinatorics*/
 
 
 
 
 /*truth tables*/
-
-
+.truthtable
+{
+    width: 25%;
+    margin: 50px;
+}
 /*random values*/
+.Randomized
+{
+    margin: 20px;
+}
 
 /*surprise math*/
+.containerSurprise
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.flexItem
+{
+    font-size: 30pt;
+    height: 75px;
+}

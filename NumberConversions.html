@@ -1,17 +1,93 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="styles.css"
+        <link rel="stylesheet" href="styles.css">
+        <script>
+            function print(system_name, system_num, base)
+            {
+                document.getElementById("numberInput").innerHTML = system_name + " number: " + system_num.toString(base) + " is " ;
+                document.getElementById("decOutput").innerHTML = system_num.toString(10) + " in decimal";
+                document.getElementById("binOutput").innerHTML = system_num.toString(2) + " in binary";
+                document.getElementById("octOutput").innerHTML = system_num.toString(8) + " in octal";
+                document.getElementById("hexOutput").innerHTML = system_num.toString(16) + " in hexadecimal";
+            }
+            function numberConvert()
+            {
+                var userInput = document.getElementById("numInput").value;
+                var dec_number = parseInt(userInput,10);
+                var bin_number = parseInt(userInput, 2);
+                var oct_number = parseInt(userInput, 8);
+                var hex_number = parseInt(userInput, 16);
+                var inputValue = document.getElementById("inputSystem").innerHTML;
+                
+                if(inputValue =="Hexadecimal" && userInput.search(/^[0-9a-fA-F]+$/) ==0 )
+                {
+                    print("Hexadecimal", hex_number, 16)
+                }
+                else if ( isNaN(dec_number) || 
+                     userInput % 1 != 0 || 
+                    (inputValue == "Binary" && userInput.search(/^[10]+$/) == -1) ||
+                    (inputValue == "Octal" && userInput.search(/^[0-7]+$/) == -1))
+                {
+                    alert("Please type in a correct value") ;
+                }
+                else if (inputValue == "Decimal")
+                {
+                    print("Decimal", dec_number,10)
+                }
+                else if (inputValue == "Binary")
+                {
+                    print("Binary", bin_number, 2)
+                }
+                else if (inputValue == "Octal")
+                {
+                    print("Octal", oct_number, 8)
+                }
+            }
+            var systemIndex = 1;
+            var allSystems = ["Decimal", "Binary", "Octal", "Hexadecimal"];
+            function inputSystem()
+            {
+                var numberSystem = document.getElementById("inputSystem") ;
+                numberSystem.innerHTML = allSystems[systemIndex];
+                systemIndex ++ ;
+
+                if (systemIndex >= allSystems.length)
+                {
+                    systemIndex = 0 ;
+                }
+                document.getElementById("numInput").value = "";
+            }
+        </script>
     </head>
     <body>
-        <div class="header">MATH GENIOUS</div>
-        <div class="headerSelections">
-            <div class="headerTitles">Number Conversion</div>
-            <div class="headerTitles">Number Table</div>
-            <div class="headerTitles">Combinatorics</div>
-            <div class="headerTitles">Truth tables</div>
-            <div class="headerTitles">Random Values</div>
-            <div class="headerTitles">Surprise math</div>
+        <div class="testi">
+        <div class="header"><h1 class="mathgenie"><a href="index.html">MATH GENIUS</a></h1>
+            <div class="headerSelections">
+                <div class="headerTitles"><a href="NumberConversions.html">Number Conversion</a></div>
+                <div class="headerTitles"><a href="Number_Table.html">Number Table</a></div>
+                <div class="headerTitles"><a href="combinatorics.html"> Combinatorics</a> </div>
+                <div class="headerTitles"><a href="TruthTables.html">Truth tables</a></div>
+                <div class="headerTitles"><a href="RandomValues.html">Random Values</a></div>
+                <div class="headerTitles"><a href="SurpriseMath.html"> Surprise Math</a> </div>
+            </div>
+        </div>
+        <div class="content center">To convert between different numeral systems: <br>
+            please first choose from what numbering system you want to convert <br>
+            <button onclick="inputSystem()" id="inputSystem">Decimal</button> <br>
+            and then type in a number <br>
+            
+            <input type="text" placeholder="Type a number..." id="numInput" onkeyup="numberConvert()"> 
+        </div>
+        <div id="numberInput" class="center answer">0 is</div>
+        <div class="gridcontainer">
+            <div class="emptyGrid"></div>
+            <div id="decOutput" class="gridUnit">0 in decimal</div>
+            <div id="binOutput" class="gridUnit">0 in binary</div>
+            <div class="emtyGrid"></div>
+            <div id="octOutput" class="gridUnit">0 in octal</div>
+            <div id="hexOutput" class="gridUnit">0 in hexadecimal</div>
+        </div>
         </div>
 
 
